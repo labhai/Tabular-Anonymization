@@ -34,7 +34,7 @@ anonymization_report_YYYYMMDD_HHMMSS.csv
 
     
 ## Usage
-![Verifier-pipeline](..\data\tabular-verifier.png)
+![Verifier-pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-verifier.png)
 
 ### Example
    - Original: `test/patients.csv`

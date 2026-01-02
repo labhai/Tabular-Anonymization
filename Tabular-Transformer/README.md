@@ -42,7 +42,7 @@ patients_anonymized_log.json
     - Column-level transformations
 
 ## Usage
-![Transformer_Pipeline](..\data\tabular-transformer.png)
+![Transformer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-transformer.png)
 
 ### Example
    - Input: `data/patients.csv`
