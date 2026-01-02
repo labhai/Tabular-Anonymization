@@ -39,6 +39,6 @@ patients_anonymized_log.json
     - Applied anonymization policies
     - Column-level transformations
 
-### Example Workflow
+### Example
    - Input: `data/patients.csv`
    - Output: `data/patients_anonymized.csv`

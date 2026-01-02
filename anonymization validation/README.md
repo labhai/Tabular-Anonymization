@@ -30,7 +30,7 @@ anonymization_report_YYYYMMDD_HHMMSS.csv
     - Policy compliance indicators
     - Warning / failure flag
 
-### Example Workflow
+### Example
    - Original: `test/patients.csv`
    - Anonymized: `test/patients_anonymized.csv`
    - Report: `test/anonymization_report_*.csv`
