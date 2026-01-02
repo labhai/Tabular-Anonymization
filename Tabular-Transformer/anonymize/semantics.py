@@ -1,11 +1,14 @@
 import re
 import pandas as pd
+from typing import List, Optional
 
-def _tokenize(col: str) -> list[str]:
+
+def _tokenize(col: str) -> List[str]:
     s = str(col or "")
     s = re.sub(r"([a-z])([A-Z])", r"\1 \2", s)
     s = re.sub(r"[^0-9a-zA-Z가-힣]+", " ", s.lower())
     return [t for t in s.split() if t]
+
 
 SEMANTIC_ALIASES = {
     "ssn": ["ssn", "resident", "rrn", "주민", "주민번호", "주민등록"],
@@ -26,7 +29,8 @@ SEMANTIC_ALIASES = {
     "diagnosis": ["diagnosis", "dx", "icd", "진단"],
 }
 
-def guess_semantic_field(col_name: str, series: pd.Series | None = None) -> str:
+
+def guess_semantic_field(col_name: str, series: Optional[pd.Series] = None) -> str:
     tokens = _tokenize(col_name)
 
     priority = [
