@@ -8,6 +8,9 @@ cd Tabular-Anonymizer
 ```
 
 ### Required packages:
+**Environment**
+- OS: Windows
+- Python: 3.12 (recommended)
   ```bash
   pip install pandas numpy openpyxl
   ```
