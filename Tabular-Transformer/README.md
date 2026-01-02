@@ -13,8 +13,8 @@ This repository provides a comprehensive Tabular anonymization pipeline to anony
 ## Run the Anonymizer
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
-cd /anonymization\ transformation
-python tabular_anonymizer.py
+cd /Tabular-Transformer
+python tabular_transformer.py
 ```
 **GUI Options**
 - **Input files:** Select one or more CSV / Excel files
