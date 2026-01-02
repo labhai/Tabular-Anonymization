@@ -20,7 +20,7 @@ cd Tabular-Anonymizer
   ```
 
 ## Usage
-![Anonymization_Pipeline](data\tabular-application.png)
+![Anonymization_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-application.png)
 
 ## Example
 Anonymizer & Validator
