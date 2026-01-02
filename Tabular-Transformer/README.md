@@ -1,5 +1,7 @@
 # Tabular Anonymizer
-This repository provides a comprehensive Tabular anonymization pipeline to anonymize data.
+This repository provides a robust, policy-driven tabular data anonymization framework designed for research, clinical, and institutional data pipelines.
+It supports reproducible, auditable anonymization of structured datasets while balancing privacy protection and downstream data utility.
+
 - Supports **CSV / XLSX / XLS** input formats
 - **Low-level** and **High-level** anonymization modes (selectable)
 - Automatic identifier / quasi-identifier inference based on column names (semantic guessing)
@@ -38,6 +40,9 @@ patients_anonymized_log.json
     - Detected semantic fields
     - Applied anonymization policies
     - Column-level transformations
+
+## Usage
+![Transformer_Pipeline](..\data\tabular-transformer.png)
 
 ### Example
    - Input: `data/patients.csv`

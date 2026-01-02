@@ -1,5 +1,7 @@
 # Tabular Verifier
-This repository provides a comprehensive Tabular validation pipeline to ensure anonymization integrity.
+This repository also provides a dedicated anonymization validation pipeline to ensure that anonymized datasets comply with predefined privacy policies and transformation rules.
+The verifier is designed for post-anonymization quality assurance, large-scale audits, and institutional compliance checks.
+
 - Verifies anonymized files against original data
 - Supports validation
 - Results are appended to a single CSV report
@@ -29,6 +31,10 @@ anonymization_report_YYYYMMDD_HHMMSS.csv
     - Identifier handling status
     - Policy compliance indicators
     - Warning / failure flag
+
+    
+## Usage
+![Verifier-pipeline](..\data\tabular-verifier.png)
 
 ### Example
    - Original: `test/patients.csv`

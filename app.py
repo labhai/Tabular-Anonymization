@@ -263,7 +263,7 @@ def _review_flags(mode: str, warn_ratio: float, fail_ratio: float) -> Tuple[bool
 class AnonymizerGUI:
     def __init__(self, master):
         self.master = master
-        master.title("의료데이터 익명화 도구 (멀티 파일 + k/l/t 지표)")
+        master.title("의료데이터 익명화 도구")
 
         self.input_paths_var = tk.StringVar()
         self.output_dir_var = tk.StringVar()
