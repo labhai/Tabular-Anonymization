@@ -142,6 +142,25 @@ Review flags:
 
 ---
 
+## Usage
+
+Run from repository root:
+
+```bash
+python "tabular-verifier/tabular_anonymization_verifier.py"
+```
+
+Then, in the GUI:
+1. Select original files (CSV / Excel)
+2. (Optional) Select anonymized folder (defaults to original folder)
+3. (Optional) Select report folder (defaults to original folder)
+4. Start validation
+
+How to use:
+![Verifier_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-verifier.png)
+
+---
+
 ## Output
 
 ### 1) CSV report
@@ -169,22 +188,3 @@ Rows are appended per processed file within a single run.
 | `k < 2 비율(%)` | Fraction of records in QI-groups with size < 2 |
 | `k < 5 비율(%)` | Fraction of records in QI-groups with size < 5 |
 | `처리 시간(초)` | Validation duration per file |
-
----
-
-## Usage
-
-Run from repository root:
-
-```bash
-python "tabular-verifier/tabular_anonymization_verifier.py"
-```
-
-Then, in the GUI:
-1. Select original files (CSV / Excel)
-2. (Optional) Select anonymized folder (defaults to original folder)
-3. (Optional) Select report folder (defaults to original folder)
-4. Start validation
-
-How to use:
-![Verifier_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-verifier.png)

@@ -133,15 +133,6 @@ Each log file records:
 
 ---
 
-## File naming rule
-
-For an input file: `patients.csv`
-The transformer produces: `patients_anonymized.csv` , `patients_anonymized_log.json`
-
-These filenames are used by the verifier for automatic matching.
-
----
-
 ## Usage
 
 Run from repository root:
@@ -159,3 +150,12 @@ Then, in the GUI:
 
 How to use:
 ![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-transformer.png)
+
+---
+
+## Output
+
+For an input file: `patients.csv`
+The transformer produces: `patients_anonymized.csv` , `patients_anonymized_log.json`
+
+These filenames are used by the verifier for automatic matching.
