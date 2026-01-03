@@ -1,13 +1,13 @@
 import pandas as pd
 
-from .semantics import guess_semantic_field
-from .transforms import transform_series
+from semantics import guess_semantic_field
+from transforms import transform_series
 
-from policy.policy_low import policy_low
-from policy.policy_high import policy_high
+from policy_low import policy_low
+from policy_high import policy_high
 
-from validation.validation_low import validate_low
-from validation.validation_high import validate_high
+from validation_low import validate_low
+from validation_high import validate_high
 
 def _get_policy(mode: str):
     return policy_high if str(mode).lower().strip() == "high" else policy_low

@@ -1,8 +1,8 @@
 import re
 import pandas as pd
 
-from .common_hash import stable_token
-from .name_masking import pseudonymize_name_series
+from common_hash import stable_token
+from name_masking import pseudonymize_name_series
 
 def _blank_series_like(series: pd.Series) -> pd.Series:
     return pd.Series([""] * len(series), index=series.index)

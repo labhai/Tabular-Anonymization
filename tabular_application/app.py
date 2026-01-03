@@ -11,16 +11,16 @@ import datetime
 import os
 from typing import List, Dict, Any, Optional, Tuple
 
-from anonymize.semantics import guess_semantic_field
-from anonymize.transforms import transform_series
+from semantics import guess_semantic_field
+from transforms import transform_series
 
-from policy.policy_low import policy_low
-from policy.policy_high import policy_high
+from policy_low import policy_low
+from policy_high import policy_high
 
-from validation.validation_low import validate_low
-from validation.validation_high import validate_high
+from validation_low import validate_low
+from validation_high import validate_high
 
-from validation.validation_common import compute_validation_metrics
+from validation_common import compute_validation_metrics
 
 def _safe_str_series(s: pd.Series) -> pd.Series:
     return s.fillna("").astype(str).str.strip()

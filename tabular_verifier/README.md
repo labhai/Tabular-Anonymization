@@ -147,7 +147,7 @@ Review flags:
 Run from repository root:
 
 ```bash
-python "tabular-verifier/tabular_anonymization_verifier.py"
+python "tabular_verifier/tabular_anonymization_verifier.py"
 ```
 
 Then, in the GUI:

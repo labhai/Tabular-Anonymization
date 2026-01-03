@@ -138,7 +138,7 @@ Each log file records:
 Run from repository root:
 
 ```bash
-python "tabular-anonymizer/tabular_anonymizer.py"
+python "tabular_anonymizer/tabular_anonymizer.py"
 ```
 
 Then, in the GUI:

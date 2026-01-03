@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-from .common_hash import stable_token
+from common_hash import stable_token
 
 _HANGUL_NAME_RE = re.compile(r"^[가-힣]{2,4}$")
 

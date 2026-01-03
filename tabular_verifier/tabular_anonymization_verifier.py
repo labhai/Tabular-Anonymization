@@ -13,9 +13,9 @@ import json
 import logging
 from typing import List, Dict, Any, Optional, Tuple
 
-from validation.validation_low import validate_low
-from validation.validation_high import validate_high
-from validation.validation_common import compute_validation_metrics
+from tabular_application.validation_low import validate_low
+from tabular_application.validation_high import validate_high
+from tabular_application.validation_common import compute_validation_metrics
 
 def _guess_ext(path: str) -> str:
     return os.path.splitext(path)[1].lower()

@@ -1,5 +1,5 @@
 import pandas as pd
-from .validation_common import check_column_compliance
+from validation_common import check_column_compliance
 
 def _is_nan_colname(col):
     if col is None:

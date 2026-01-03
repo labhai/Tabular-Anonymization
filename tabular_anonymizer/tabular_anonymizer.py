@@ -13,11 +13,11 @@ import json
 import logging
 from typing import List, Dict, Any, Optional, Tuple
 
-from anonymize.semantics import guess_semantic_field
-from anonymize.transforms import transform_series
+from semantics import guess_semantic_field
+from transforms import transform_series
 
-from policy.policy_low import policy_low
-from policy.policy_high import policy_high
+from policy_low import policy_low
+from policy_high import policy_high
 
 def _guess_ext(path: str) -> str:
     return os.path.splitext(path)[1].lower()

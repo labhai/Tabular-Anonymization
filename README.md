@@ -29,24 +29,22 @@ cd Tabular-Anonymizer
 ## Example
 Anonymizer & Validator
 ```bash
+cd tabular_application
 python app.py
 ```
-
-How to use:
-![Anonymization_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-application.png)
 
 Anonymizer
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
-cd /Tabular-Anonymization
-python tabular-anonymizer/tabular_anonymizer.py
+cd Tabular-Anonymization
+python tabular_anonymizer/tabular_anonymizer.py
 ```
 
 Validator
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
-cd /Tabular-Anonymization
-python tabular-verifier/tabular_anonymization_verifier.py
+cd Tabular-Anonymization
+python tabular_verifier/tabular_anonymization_verifier.py
 ```
 
 ## Test Dataset (Demo Data)
