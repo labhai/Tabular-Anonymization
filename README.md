@@ -1,5 +1,12 @@
 # Tabular Anonymizer
-This repository provides a comprehensive Tabular anonymization and validation pipeline, along with verification tools to ensure anonymization integrity.
+
+**Tabular Anonymizer** is a GUI-based framework for **policy-driven anonymization and validation**
+of structured tabular data (CSV / Excel), designed for medical and clinical research workflows.
+
+The framework provides:
+- a **Transformer** for semantic-aware anonymization
+- a **Verifier** for log-driven compliance checking
+- an **All-in-one application** for end-to-end execution
 
 ## Installation
 ``` bash
@@ -19,27 +26,27 @@ cd Tabular-Anonymizer
   pip3 install -r requirements.txt
   ```
 
-## Usage
-![Anonymization_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-application.png)
-
 ## Example
 Anonymizer & Validator
 ```bash
 python app.py
 ```
 
+How to use:
+![Anonymization_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-application.png)
+
 Anonymizer
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
-cd /Tabular-Transformer
-python tabular_transformer.py
+cd /Tabular-Anonymization
+python tabular-anonymizer/tabular_anonymizer.py
 ```
 
 Validator
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
-cd /Tabular-Verifier
-python tabular_anonymization_verifier.py
+cd /Tabular-Anonymization
+python tabular-verifier/tabular_anonymization_verifier.py
 ```
 
 ## Test Dataset (Demo Data)
