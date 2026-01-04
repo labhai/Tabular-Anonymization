@@ -6,16 +6,16 @@ of structured tabular data (CSV / Excel), intended for handling **healthcare res
 
 ## Repository Structure
 
-### `tabular_application/`  
+### `tabular_application`  
   **GUI application** (recommended entry point): run anonymization and verification in one workflow.
 
-### `tabular_anonymizer/`  
+### `tabular_anonymizer`  
   **Standalone anonymizer GUI**: apply low/high anonymization policies to CSV/Excel and export anonymized files.
 
-### `tabular_verifier/`  
+### `tabular_verifier`  
   **Standalone verifier GUI**: validate anonymization outputs and generate compliance-style reports (including k-group summaries when configured).
 
-### `data/`  
+### `data`  
   Demo assets and sample data (e.g., `patients.csv`) and UI screenshots.
 
 
