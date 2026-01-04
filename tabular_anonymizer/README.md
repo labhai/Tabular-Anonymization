@@ -8,7 +8,6 @@
 
 The anonymizer is GUI-based and supports **batch anonymization** in a single run.
 
----
 
 ## Directory contains
 
@@ -35,7 +34,6 @@ This directory contains a standalone GUI focused solely on anonymization without
 - `common_hash.py`  
   Hashing utilities for pseudonymization and tokenization.
 
----
 
 ## What this script does
 
@@ -143,7 +141,6 @@ The anonymized file preserves:
 - row count
 - field order (except for dropped/expanded fields)
 
----
 
 ## Anonymization log (`*_anonymized_log.json`)
 
@@ -158,7 +155,6 @@ Each log file records:
   - applied action
   - any action-specific parameters
 
----
 
 ## Usage
 
@@ -178,7 +174,6 @@ Then, in the GUI:
 How to use:
 ![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-anonymizer.png)
 
----
 
 ## Output
 
