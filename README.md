@@ -39,18 +39,18 @@ cd Tabular-Anonymization
 pip install -r requirements.txt
 ```
 
-### 2) Run (recommended): GUI Application
+### 2) Run (recommended): GUI application
 ```bash
 python tabular_application/app.py
 ```
 
 ### 3) Run (optional): Standalone modules
-Standalone Anonymizer
+Standalone anonymizer
 ``` bash
 python tabular_anonymizer/tabular_anonymizer.py
 ```
 
-Standalone Verifier
+Standalone verifier
 ```bash
 python tabular_verifier/tabular_anonymization_verifier.py
 ```
