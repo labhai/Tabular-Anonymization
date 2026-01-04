@@ -24,46 +24,6 @@ This repository provides:
 - `data/`  
   Demo assets and sample data (e.g., `patients.csv`) and UI screenshots.
 
-### Repository structure
-``` text
-Tabular-Anonymization/
-├── tabular_application/
-│   ├── app.py
-│   ├── anonymizer.py
-│   ├── policy_low.py
-│   ├── policy_high.py
-│   ├── validation_low.py
-│   ├── validation_high.py
-│   ├── validation_common.py
-│   ├── transforms.py
-│   ├── semantics.py
-│   ├── name_masking.py
-│   └── common_hash.py
-│
-├── tabular_anonymizer/
-│   ├── tabular_anonymizer.py
-│   ├── anonymizer.py
-│   ├── policy_low.py
-│   ├── policy_high.py
-│   ├── transforms.py
-│   ├── semantics.py
-│   ├── name_masking.py
-│   └── common_hash.py
-│
-├── tabular_verifier/
-│   ├── tabular_anonymization_verifier.py
-│   ├── validation_low.py
-│   ├── validation_high.py
-│   └── validation_common.py
-│
-├── data/
-│   ├── patients.csv
-│   └── download.md
-│
-├── requirements.txt
-└── README.md
-```
-
 ---
 
 ## Quick start
