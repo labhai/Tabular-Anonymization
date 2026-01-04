@@ -11,6 +11,21 @@ It performs **column-level compliance checks** based on the anonymization log (`
 
 ---
 
+## Directory contains
+
+This directory contains a standalone GUI dedicated to verification and reporting.
+
+- `tabular_anonymization_verifier.py`  
+  Standalone verifier GUI entry point. Inspects anonymized outputs, evaluates policy compliance, and exports verification reports.
+
+- `validation_low.py`, `validation_high.py`  
+  Policy-specific verification routines for low- and high-level anonymization.
+
+- `validation_common.py`  
+  Shared verification helpers used across verification modules.
+
+---
+
 ## What this script verifies
 
 ### 1) File pairing rule (origin ↔ anonymized ↔ log)

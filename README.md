@@ -1,51 +1,103 @@
-# Tabular Anonymizer
+# Tabular-Anonymization
 
-**Tabular Anonymizer** is a GUI-based framework for **policy-driven anonymization and validation**
-of structured tabular data (CSV / Excel), designed for medical and clinical research workflows.
+**Tabular-Anonymization** is a GUI-based toolkit for **policy-driven anonymization and verification**
+of structured tabular data (CSV / Excel), intended for handling **healthcare research information** safely.
 
-The framework provides:
-- a **Transformer** for semantic-aware anonymization
-- a **Verifier** for log-driven compliance checking
-- an **All-in-one application** for end-to-end execution
+This repository provides:
+- **Application**: GUI that runs anonymization → verification sequentially and produces a single report
+- **Anonymizer**: policy-based anonymization (low/high level rules, semantic-aware field handling)
+- **Verifier**: post-hoc verification and reporting to confirm whether anonymization rules were applied as intended
 
-## Installation
-``` bash
-git clone https://github.com/labhai/Tabular-Anonymization
-cd Tabular-Anonymizer
+---
+
+## Repository layout
+
+- `tabular_application/`  
+  **GUI application** (recommended entry point): run anonymization and verification in one workflow.
+
+- `tabular_anonymizer/`  
+  **Standalone anonymizer GUI**: apply low/high anonymization policies to CSV/Excel and export anonymized files.
+
+- `tabular_verifier/`  
+  **Standalone verifier GUI**: validate anonymization outputs and generate compliance-style reports (including k-group summaries when configured).
+
+- `data/`  
+  Demo assets and sample data (e.g., `patients.csv`) and UI screenshots.
+
+### Repository structure
+``` text
+Tabular-Anonymization/
+├── tabular_application/
+│   ├── app.py
+│   ├── anonymizer.py
+│   ├── policy_low.py
+│   ├── policy_high.py
+│   ├── validation_low.py
+│   ├── validation_high.py
+│   ├── validation_common.py
+│   ├── transforms.py
+│   ├── semantics.py
+│   ├── name_masking.py
+│   └── common_hash.py
+│
+├── tabular_anonymizer/
+│   ├── tabular_anonymizer.py
+│   ├── anonymizer.py
+│   ├── policy_low.py
+│   ├── policy_high.py
+│   ├── transforms.py
+│   ├── semantics.py
+│   ├── name_masking.py
+│   └── common_hash.py
+│
+├── tabular_verifier/
+│   ├── tabular_anonymization_verifier.py
+│   ├── validation_low.py
+│   ├── validation_high.py
+│   └── validation_common.py
+│
+├── data/
+│   ├── patients.csv
+│   └── download.md
+│
+├── requirements.txt
+└── README.md
 ```
 
-### Required packages:
-**Environment**
-- OS: Windows
-- Python: 3.12 (recommended)
-  ```bash
-  pip install pandas numpy tkinter
-  ```
-  or
-  ```bash
-  pip3 install -r requirements.txt
-  ```
+---
 
-## Example
-Anonymizer & Validator
-```bash
-cd tabular_application
-python app.py
-```
+## Quick start
 
-Anonymizer
+### 0) Requirements
+- python 3.11+
+- Git (optional, only if you clone the repository)
+
+### 1) Install
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
 cd Tabular-Anonymization
+pip install -r requirements.txt
+```
+
+### 2) Run (recommended): GUI Application
+```bash
+python tabular_application/app.py
+```
+
+### 3) Run (optional): Standalone modules
+Standalone Anonymizer
+``` bash
 python tabular_anonymizer/tabular_anonymizer.py
 ```
 
-Validator
+Standalone Verifier
 ```bash
-git clone https://github.com/labhai/Tabular-Anonymization
-cd Tabular-Anonymization
 python tabular_verifier/tabular_anonymization_verifier.py
 ```
 
-## Test Dataset (Demo Data)
-To test the Anonymizer and Validator, a sample tabular data (Synthea_TM) is provided. You can use `patients.csv` data in `data` folder or download the demo dataset from the following link: https://github.com/synthetichealth/synthea-sample-data/tree/main/downloads
+---
+
+## Demo data
+
+A sample dataset is included under the `data/` directory (e.g., `patients.csv`).  
+Additional demo data based on Synthea is referenced in `data/download.md`.

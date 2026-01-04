@@ -1,19 +1,46 @@
-# Tabular Anonymization Transformer (`tabular_anonymizer.py`)
+# Tabular Anonymizer (`tabular_anonymizer.py`)
 
 `tabular_anonymizer.py` applies **policy-driven anonymization** to structured tabular data
-(CSV / Excel) using **semantic column inference** and produces:
+(CSV / Excel) using **semantic field inference** and produces:
 
 - anonymized tabular files
 - per-file anonymization logs (`*_anonymized_log.json`) for audit and validation
 
-The transformer is GUI-based and supports **batch anonymization** in a single run.
+The anonymizer is GUI-based and supports **batch anonymization** in a single run.
+
+---
+
+## Directory contains
+
+This directory contains a standalone GUI focused solely on anonymization without verification.
+
+- `tabular_anonymizer.py`  
+  Standalone anonymizer GUI entry point. Supports selecting one or more input files and applying low- or high-level anonymization policies.
+
+- `anonymizer.py`  
+  Implements the standalone anonymization pipeline.
+
+- `policy_low.py`, `policy_high.py`  
+  Define low- and high-level anonymization policies.
+
+- `transforms.py`  
+  Anonymization transformation primitives.
+
+- `semantics.py`  
+  Semantic field inference for applying appropriate transformations per field type.
+
+- `name_masking.py`  
+  Name-specific masking utilities.
+
+- `common_hash.py`  
+  Hashing utilities for pseudonymization and tokenization.
 
 ---
 
 ## What this script does
 
 ### 1) Input handling
-The transformer accepts one or more structured files:
+The anonymizer accepts one or more structured files:
 
 - CSV (`.csv`)
 - Excel (`.xlsx`, `.xls`)
@@ -22,9 +49,9 @@ Files may contain heterogeneous schemas; anonymization is applied **per file**.
 
 ---
 
-### 2) Semantic column inference
+### 2) Semantic field inference
 
-Before anonymization, each column name is tokenized and matched against a predefined
+Before anonymization, each field name is tokenized and matched against a predefined
 semantic alias dictionary to infer its semantic role.
 
 Examples of inferred semantics:
@@ -35,13 +62,13 @@ Examples of inferred semantics:
 
 Semantic inference is **header-based only** (no value-based inspection at this stage).
 
-The inferred semantic for each column is recorded in the anonymization log.
+The inferred semantic for each field is recorded in the anonymization log.
 
 ---
 
 ### 3) Anonymization level selection
 
-The transformer supports two anonymization levels:
+The anonymizer supports two anonymization levels:
 
 #### Low-level anonymization
 - Designed for **internal research use**
@@ -65,9 +92,9 @@ The selected level determines the policy mapping applied to each semantic field.
 
 ---
 
-### 4) Column-wise transformation
+### 4) field-wise transformation
 
-For each column, the transformer selects an action based on:
+For each field, the anonymizer selects an action based on:
 - inferred semantic
 - anonymization level
 - runtime options (e.g., diagnosis permission)
@@ -114,7 +141,7 @@ For each input file:
 
 The anonymized file preserves:
 - row count
-- column order (except for dropped/expanded columns)
+- field order (except for dropped/expanded fields)
 
 ---
 
@@ -125,8 +152,8 @@ Each log file records:
 - original filename
 - anonymization level (`low` / `high`)
 - diagnosis permission flag
-- per-column entries:
-  - original column name
+- per-field entries:
+  - original field name
   - inferred semantic
   - applied action
   - any action-specific parameters
@@ -149,13 +176,28 @@ Then, in the GUI:
 5. Start anonymization
 
 How to use:
-![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-transformer.png)
+![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-anonymizer.png)
 
 ---
 
 ## Output
 
 For an input file: `patients.csv`
-The transformer produces: `patients_anonymized.csv` , `patients_anonymized_log.json`
+The anonymizer produces: `patients_anonymized.csv` , `patients_anonymized_log.json`
 
 These filenames are used by the verifier for automatic matching.
+
+### Supported inputs
+
+- CSV (`*.csv`)
+- Excel (`*.xlsx`, `*.xls`)
+
+### Multiple file selection
+
+The GUI supports selecting multiple CSV or Excel files at once through a multi-file picker.
+
+When multiple input files are selected:
+
+- Each file is processed independently using the same selected policy (low or high) and configuration
+- Anonymized outputs are generated per input file
+- Verification reports include the original file name so that users can trace results for each file individually
