@@ -1,16 +1,10 @@
-# Tabular-Anonymization
+# Tabular Anonymization
 
-**Tabular-Anonymization** is a GUI-based toolkit for **policy-driven anonymization and verification**
+This is a GUI-based toolkit for **policy-driven anonymization and verification**
 of structured tabular data (CSV / Excel), intended for handling **healthcare research information**.
 
-This repository provides:
-- **Application**: GUI that runs anonymization → verification sequentially and produces a single report
-- **Anonymizer**: policy-based anonymization (low/high level rules, semantic-aware field handling)
-- **Verifier**: post-hoc verification and reporting to confirm whether anonymization rules were applied as intended
 
----
-
-## Repository layout
+## Repository Structure
 
 - `tabular_application/`  
   **GUI application** (recommended entry point): run anonymization and verification in one workflow.
@@ -24,20 +18,26 @@ This repository provides:
 - `data/`  
   Demo assets and sample data (e.g., `patients.csv`) and UI screenshots.
 
----
 
-## Quick start
+## Download Tabular Anonymization
 
-### 0) Requirements
-- python 3.11+
-- Git (optional, only if you clone the repository)
-
-### 1) Install
 ```bash
 git clone https://github.com/labhai/Tabular-Anonymization
 cd Tabular-Anonymization
+```
+
+## Requirements and Installation
+
+### Requirements
+- python 3.11+
+- Git (optional, only if you clone the repository)
+
+### Installation
+```bash
 pip install -r requirements.txt
 ```
+
+## Example (Quickstart)
 
 ### 2) Run (recommended): GUI application
 ```bash
@@ -55,9 +55,7 @@ Standalone verifier
 python tabular_verifier/tabular_anonymization_verifier.py
 ```
 
----
-
-## Demo data
+## Test Dataset (Demo Data)
 
 A sample dataset is included under the `data/` directory (e.g., `patients.csv`).  
 Additional demo data based on Synthea is referenced in `data/download.md`.
