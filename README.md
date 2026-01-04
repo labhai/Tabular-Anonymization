@@ -1,7 +1,7 @@
 # Tabular-Anonymization
 
 **Tabular-Anonymization** is a GUI-based toolkit for **policy-driven anonymization and verification**
-of structured tabular data (CSV / Excel), intended for handling **healthcare research information** safely.
+of structured tabular data (CSV / Excel), intended for handling **healthcare research information**.
 
 This repository provides:
 - **Application**: GUI that runs anonymization → verification sequentially and produces a single report
