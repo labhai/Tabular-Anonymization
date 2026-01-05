@@ -3,6 +3,24 @@
 This is a GUI-based toolkit for **policy-driven anonymization and verification**
 of structured tabular data (CSV / Excel), intended for handling **healthcare research information**.
 
+## What is Tabular data?
+This project handles tabular healthcare research information, typically stored in CSV or Excel formats.
+Such data represents structured records where each row corresponds to an individual entity (e.g., a patient, visit, or supply item), and each column represents an attribute such as identifiers, demographics, dates, diagnoses, or administrative information.
+
+## Why Anonymization Is Necessary
+Healthcare tabular data often contains personally identifiable information (PII) or quasi-identifiers, such as:
+
+- patient IDs or record numbers
+- names or initials
+- dates (birth, visit, admission, discharge)
+- demographic attributes (age, sex, region)
+
+Even if explicit identifiers are removed, individuals may still be re-identified by linkage attacks using combinations of attributes (e.g., age + sex + visit date).
+
+Anonymization is therefore required to:
+- comply with privacy regulations (e.g., IRB, GDPR, HIPAA-style principles)
+- reduce re-identification risk before data sharing or analysis
+- enable safe secondary use of healthcare data for research and development
 
 ## Repository Structure
 
