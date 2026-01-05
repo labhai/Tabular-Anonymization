@@ -120,25 +120,57 @@ The selected level determines the policy mapping applied to each semantic field.
 
 ### 4) field-wise transformation
 
-For each field, the anonymizer selects an action based on:
-- inferred semantic
-- anonymization level
-- runtime options (e.g., diagnosis permission)
+The Tabular Anonymizer applies **semantic-aware anonymization techniques** at the
+field level. Each transformation corresponds to a well-established privacy
+preservation method (e.g., deletion, pseudonymization, generalization).
 
-Supported transformation actions include:
+### Supported transformations and their privacy classifications
 
-- `drop`
-  - replace all values with blank
-- `keep_if_permitted_else_drop`
-  - used for diagnosis-related fields
-- `pseudonymize`
-  - deterministic pseudonym generation
-- `date_floor_year`
-- `date_floor_decade`
-- `generalize`
-  - e.g., coarse bucketing
-- `keep`
-  - for non-sensitive fields
+#### `drop`
+- **Privacy technique**: Deletion
+- Replaces all values with blanks
+- Irreversible anonymization method
+- Used for direct identifiers or fields not permitted to be retained
+
+#### `keep_if_permitted_else_drop`
+- **Privacy technique**: Conditional Deletion
+- Retains values only if explicitly permitted by policy or runtime options
+  (e.g., diagnosis permission)
+- Otherwise treated identically to `drop`
+
+#### `pseudonymize`
+- **Privacy technique**: Pseudonymization
+- Replaces original values with deterministic pseudonyms
+- Preserves linkability across records while hiding original values
+- As this is not deletion, pseudonymized fields may still be considered
+  personal data under certain regulations
+
+#### `date_floor_year`, `date_floor_decade`
+- **Privacy technique**: Temporal Generalization
+- Converts dates to coarse-grained representations
+  (e.g., `YYYY-01-01`, decade-aligned years)
+- Reduces temporal re-identification risk while preserving analytical utility
+
+#### `generalize`
+- **Privacy technique**: Generalization / Bucketing
+- Maps detailed values to broader categories
+  (e.g., age → age group, address → region)
+- Directly contributes to improved k-anonymity
+
+#### `keep`
+- **Privacy technique**: No anonymization (Non-sensitive field)
+- Retains original values for fields assessed as non-sensitive
+
+### Summary table
+
+| Action | Privacy technique |
+|---|---|
+| `drop` | Deletion |
+| `keep_if_permitted_else_drop` | Conditional Deletion |
+| `pseudonymize` | Pseudonymization |
+| `date_floor_*` | Temporal Generalization |
+| `generalize` | Generalization / Bucketing |
+| `keep` | No anonymization |
 
 All applied actions are explicitly recorded in the log.
 

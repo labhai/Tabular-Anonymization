@@ -106,11 +106,34 @@ It reports a **high-risk handling rate**.
 ---
 
 ### 6) k-anonymity risk indicators (QI-based)
+In this verifier, a **k-group** refers to a group of records that share the same
+combination of **Quasi-Identifiers (QI)**, following the concept of
+*k-anonymity*.
 
-The verifier selects quasi-identifier (QI) columns based on semantics in `log_info`, including:
+**Quasi-Identifier (QI)**
+A Quasi-Identifier is an attribute that does not uniquely identify an individual on its own but may lead to re-identification when combined with other attributes.
 
-- age, gender, race, ethnicity, marital_status, address, zipcode, visit_date
+Based on semantic information recorded in `log_info`, the verifier automatically selects the following fields as QI candidates:
 
+- age  
+- gender  
+- race / ethnicity  
+- marital_status  
+- address / zipcode  
+- visit_date  
+
+**Definition of a k-group**
+- A **k-group** is defined as a set of records whose selected QI values are
+  **exactly identical**.
+- Each record belongs to a k-group of size `k`, indicating the minimum number of  individuals sharing the same QI pattern.
+
+Example:
+``` text
+(age=45, gender=F, zipcode=12345) → 1 record → k = 1
+(age=45, gender=F, zipcode=67890) → 7 records → k = 7
+```
+
+**Interpretation of reported metrics**
 Using these QI columns, it computes:
 - group sizes of identical QI tuples
 - the fraction of records that fall into:
