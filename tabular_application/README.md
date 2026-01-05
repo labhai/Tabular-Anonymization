@@ -55,6 +55,10 @@ The application performs the following steps in a single run:
 All steps are executed using the **same anonymization configuration**, eliminating
 configuration drift between anonymization and validation.
 
+### Learn more
+- For details on the **anonymization pipeline**, see [`tabular_anonymizer/README.md`](https://github.com/labhai/Tabular-Anonymization/blob/main/tabular_anonymizer/README.md#directory-contains).
+- For details on the **validation pipeline**, see [`tabular_verifier/README.md`](https://github.com/labhai/Tabular-Anonymization/blob/main/tabular_verifier/README.md#directory-contains).
+
 ---
 
 ## Usage
