@@ -26,7 +26,7 @@ This directory contains a standalone GUI dedicated to verification and reporting
 
 ---
 
-## What this script verifies
+##  What this script does
 
 ### 1) File pairing rule (origin ↔ anonymized ↔ log)
 
