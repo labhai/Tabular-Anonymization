@@ -3,13 +3,13 @@
 This is a GUI-based toolkit for **policy-driven anonymization and verification**
 of structured tabular data (CSV / Excel), intended for handling **healthcare research information**.
 
-## What is Tabular data?
+### What Is Tabular Data?
 **Tabular data** refers to structured healthcare research information typically stored in CSV or Excel file formats.
 In such datasets, each row represents an individual entity—such as a patient, a clinical visit, or a supply item—while each column corresponds to a specific attribute, including identifiers, demographic characteristics, dates, diagnoses, or administrative variables.
 
 Due to its simplicity and flexibility, tabular data is widely used in clinical research, hospital information systems, and administrative reporting.
 
-## Why Anonymization Is Necessary
+### Why Anonymization Is Necessary
 Healthcare tabular datasets frequently contain direct identifiers and quasi-identifiers, such as patient or record IDs, names or initials, dates (e.g., birth, visit, admission, or discharge), and demographic attributes (e.g., age, sex, or region).
 
 Because tabular data can be easily copied, merged, and cross-referenced with external datasets, insufficient anonymization may lead to unintended disclosure of sensitive personal information.
