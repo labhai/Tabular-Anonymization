@@ -47,6 +47,7 @@ cd Tabular-Anonymization
 ## Requirements and Installation
 
 ### Requirements
+- OS: Window 10/11
 - python 3.11+
 - Git (optional, only if you clone the repository)
 
@@ -57,12 +58,12 @@ pip install -r requirements.txt
 
 ## Example (Quickstart)
 
-### 2) Run (recommended): GUI application
+### 1) Run (recommended): GUI application
 ```bash
 python tabular_application/app.py
 ```
 
-### 3) Run (optional): Standalone modules
+### 2) Run (optional): Standalone modules
 Standalone anonymizer
 ``` bash
 python tabular_anonymizer/tabular_anonymizer.py

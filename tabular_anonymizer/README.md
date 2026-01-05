@@ -88,6 +88,34 @@ The anonymizer supports two anonymization levels:
 
 The selected level determines the policy mapping applied to each semantic field.
 
+| Semantic Field | Description | Low-level Anonymization | High-level Anonymization |
+|---------------|------------|----------------------------------------|---------------------------------------------|
+| `id` | Generic identifier (patient / visit / record ID) | `pseudonymize` | `drop` |
+| `patient_id` | Patient identifier | `pseudonymize` | `drop` |
+| `insurance_id` | Insurance identifier | `pseudonymize` | `drop` |
+| `encounter_id` | Visit / encounter identifier | `pseudonymize` | `drop` |
+| `ssn` | Social security / resident number | `drop` | `drop` |
+| `driver_license` | Driver’s license number | `drop` | `drop` |
+| `passport` | Passport number | `drop` | `drop` |
+| `name` | Person name | `pseudonymize` | `drop` |
+| `birthdate` | Date of birth | `date_floor_year` | `date_floor_decade` |
+| `deathdate` | Date of death | `date_floor_year` | `date_floor_decade` |
+| `visit_date` | Visit or admission date | `date_floor_year` | `date_floor_year` |
+| `age` | Age | `keep` | `drop` |
+| `gender` | Sex / gender | `keep` | `drop` |
+| `marital_status` | Marital status | `keep` | `normalize_marital_prefix` |
+| `race` | Race | `keep` | `keep` |
+| `ethnicity` | Ethnicity | `keep` | `keep` |
+| `address` | Free-text address | `region_generalize` (district-level) | `region_generalize` (city-level) |
+| `zipcode` | Postal code | `mask_zip_leading` | `mask_zip_leading` |
+| `location` | GPS / coordinate data | `drop` | `drop` |
+| `diagnosis` | Diagnosis name or code | `keep_if_permitted_else_drop` | `keep_if_permitted_else_drop` |
+| `measurement` | Lab results / numeric measurements | `keep` | `keep` |
+| `finance` | Financial or billing information | `drop` | `drop` |
+| `comment` | Free-text comment | `drop` | `drop` |
+| `note` | Clinical or administrative notes | `drop` | `drop` |
+| `other` | Non-sensitive miscellaneous fields | `keep` | `keep` |
+
 ---
 
 ### 4) field-wise transformation
@@ -172,7 +200,7 @@ Then, in the GUI:
 5. Start anonymization
 
 How to use:
-![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-anonymizer.png)
+![Anonymizer_Pipeline](https://github.com/labhai/Tabular-Anonymization/blob/main/data/tabular-transformer.png)
 
 
 ## Output
