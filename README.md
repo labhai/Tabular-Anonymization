@@ -4,23 +4,22 @@ This is a GUI-based toolkit for **policy-driven anonymization and verification**
 of structured tabular data (CSV / Excel), intended for handling **healthcare research information**.
 
 ## What is Tabular data?
-This project handles tabular healthcare research information, typically stored in CSV or Excel formats.
-Such data represents structured records where each row corresponds to an individual entity (e.g., a patient, visit, or supply item), and each column represents an attribute such as identifiers, demographics, dates, diagnoses, or administrative information.
+**Tabular data** refers to structured healthcare research information typically stored in CSV or Excel file formats.
+In such datasets, each row represents an individual entity—such as a patient, a clinical visit, or a supply item—while each column corresponds to a specific attribute, including identifiers, demographic characteristics, dates, diagnoses, or administrative variables.
+
+Due to its simplicity and flexibility, tabular data is widely used in clinical research, hospital information systems, and administrative reporting.
 
 ## Why Anonymization Is Necessary
-Healthcare tabular data often contains personally identifiable information (PII) or quasi-identifiers, such as:
+Healthcare tabular datasets frequently contain direct identifiers and quasi-identifiers, such as patient or record IDs, names or initials, dates (e.g., birth, visit, admission, or discharge), and demographic attributes (e.g., age, sex, or region).
 
-- patient IDs or record numbers
-- names or initials
-- dates (birth, visit, admission, discharge)
-- demographic attributes (age, sex, region)
+Because tabular data can be easily copied, merged, and cross-referenced with external datasets, insufficient anonymization may lead to unintended disclosure of sensitive personal information.
+Even when explicit identifiers are removed, individuals may still be re-identified through linkage attacks that exploit unique combinations of remaining attributes (e.g., age, sex, and visit date).
 
-Even if explicit identifiers are removed, individuals may still be re-identified by linkage attacks using combinations of attributes (e.g., age + sex + visit date).
+Anonymization is therefore essential to:
 
-Anonymization is therefore required to:
-- comply with privacy regulations (e.g., IRB, GDPR, HIPAA-style principles)
-- reduce re-identification risk before data sharing or analysis
-- enable safe secondary use of healthcare data for research and development
+- comply with privacy and research ethics regulations (e.g., IRB requirements, GDPR, HIPAA-style principles)
+- reduce the risk of re-identification prior to data sharing or secondary analysis
+- enable safe reuse of healthcare data for research and development
 
 ## Repository Structure
 
