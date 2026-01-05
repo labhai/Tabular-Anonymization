@@ -105,7 +105,7 @@ It reports a **high-risk handling rate**.
 
 ---
 
-### 6) k-anonymity risk indicators (QI-based)
+### 6) k-anonymity risk indicators
 In this verifier, a **k-group** refers to a group of records that share the same
 combination of **Quasi-Identifiers (QI)**, following the concept of
 *k-anonymity*.
